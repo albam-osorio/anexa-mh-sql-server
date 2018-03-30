@@ -1,0 +1,8 @@
+﻿
+
+
+CREATE PROCEDURE [esb].[MergeVentas]
+AS
+BEGIN
+	SET NOCOUNT ON;
+END

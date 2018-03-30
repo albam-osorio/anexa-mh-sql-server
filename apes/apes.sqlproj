@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>apes</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{ea8c1b14-8a9e-4736-8926-280951d50b5c}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>apes</RootNamespace>
+    <AssemblyName>apes</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="msg\" />
+    <Folder Include="msg\Tables\" />
+    <Folder Include="stage\" />
+    <Folder Include="stage\Tables\" />
+    <Folder Include="esb\" />
+    <Folder Include="esb\Tables\" />
+    <Folder Include="esb\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="esb\Stored Procedures\" />
+    <Folder Include="esb\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="msg\Tables\EstadosCambios.sql" />
+    <Build Include="msg\Tables\Locaciones.sql" />
+    <Build Include="msg\Tables\OrdenesProduccion.sql" />
+    <Build Include="msg\Tables\OrdenesProduccion_Lineas.sql" />
+    <Build Include="stage\Tables\Remisiones.sql" />
+    <Build Include="msg\Tables\Productos.sql" />
+    <Build Include="stage\Tables\Ventas.sql" />
+    <Build Include="msg\Tables\SalidasTiendas.sql" />
+    <Build Include="stage\Tables\Errores.sql" />
+    <Build Include="msg\Tables\SalidasTiendas_Lineas.sql" />
+    <Build Include="stage\Tables\Despachos.sql" />
+    <Build Include="stage\Tables\EntradasProductoTerminado.sql" />
+    <Build Include="stage\Tables\Locaciones.sql" />
+    <Build Include="stage\Tables\OrdenesProduccion.sql" />
+    <Build Include="stage\Tables\Productos.sql" />
+    <Build Include="esb\Tables\Ventas.sql" />
+    <Build Include="stage\Tables\SalidasTiendas.sql" />
+    <Build Include="esb\Tables\Seriales.sql" />
+    <Build Include="esb\Tables\Remisiones.sql" />
+    <Build Include="msg\Tables\Mensajes.sql" />
+    <Build Include="msg\Tables\LogMensajes.sql" />
+    <Build Include="esb\Tables\VentasLineas.sql" />
+    <Build Include="esb\Tables\Despachos.sql" />
+    <Build Include="esb\Tables\Despachos_Lineas.sql" />
+    <Build Include="esb\Tables\EntradasProductoTerminado.sql" />
+    <Build Include="esb\Tables\EntradasProductoTerminado_Lineas.sql" />
+    <Build Include="esb\Tables\Integraciones.sql" />
+    <Build Include="esb\Tables\Locaciones.sql" />
+    <Build Include="esb\Tables\OrdenesProduccion.sql" />
+    <Build Include="esb\Tables\OrdenesProduccion_Lineas.sql" />
+    <Build Include="esb\Tables\Productos.sql" />
+    <Build Include="esb\Tables\SalidasTiendas.sql" />
+    <Build Include="esb\Tables\SalidasTiendas_Lineas.sql" />
+    <Build Include="msg\Tables\Despachos.sql" />
+    <Build Include="msg\Tables\Despachos_Lineas.sql" />
+    <Build Include="msg\Tables\EntradasProductoTerminado.sql" />
+    <Build Include="msg\Tables\EntradasProductoTerminado_Lineas.sql" />
+    <Build Include="esb\Views\Locaciones2.sql" />
+    <Build Include="esb\Stored Procedures\MergeVentas.sql" />
+    <Build Include="esb\Stored Procedures\_DespachosIntegracionError.sql" />
+    <Build Include="esb\Stored Procedures\_DespachosIntegracionOK.sql" />
+    <Build Include="esb\Stored Procedures\DespachosMerge.sql" />
+    <Build Include="esb\Stored Procedures\_EntradasProductoTerminadoIntegracionError.sql" />
+    <Build Include="esb\Stored Procedures\_EntradasProductoTerminadoIntegracionOK.sql" />
+    <Build Include="esb\Stored Procedures\EntradasProductoTerminadoMerge.sql" />
+    <Build Include="esb\Stored Procedures\IntegracionesGetFechaUltimoPull.sql" />
+    <Build Include="esb\Stored Procedures\_LocacionesIntegracionError.sql" />
+    <Build Include="esb\Stored Procedures\_LocacionesIntegracionOK.sql" />
+    <Build Include="esb\Stored Procedures\LocacionesMerge.sql" />
+    <Build Include="esb\Stored Procedures\_OrdenesProduccionIntegracionError.sql" />
+    <Build Include="esb\Stored Procedures\_OrdenesProduccionIntegracionOK.sql" />
+    <Build Include="esb\Stored Procedures\OrdenesProduccionMerge.sql" />
+    <Build Include="esb\Stored Procedures\_ProductosIntegracionError.sql" />
+    <Build Include="esb\Stored Procedures\_ProductosIntegracionOK.sql" />
+    <Build Include="esb\Stored Procedures\ProductosMerge.sql" />
+    <Build Include="esb\Stored Procedures\_SalidasTiendasIntegracionError.sql" />
+    <Build Include="esb\Stored Procedures\_SalidasTiendasIntegracionOK.sql" />
+    <Build Include="esb\Stored Procedures\SalidasTiendasMerge.sql" />
+    <Build Include="Security\esb.sql" />
+    <Build Include="Security\msg.sql" />
+    <Build Include="Security\stage.sql" />
+    <Build Include="esb\Sequences\SequenceIntegraciones.sql" />
+    <Build Include="esb\Sequences\SequenceEtl.sql" />
+  </ItemGroup>
+</Project>

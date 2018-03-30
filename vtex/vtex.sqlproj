@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>marroquinera</Name>
+    <Name>vtex</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{be10cfde-fa0b-41b2-91fc-d50b3fd203ea}</ProjectGuid>
+    <ProjectGuid>{e732c090-4e8d-4d78-b1ea-ea8d97b6ebda}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>marroquinera</RootNamespace>
-    <AssemblyName>marroquinera</AssemblyName>
+    <RootNamespace>vtex</RootNamespace>
+    <AssemblyName>vtex</AssemblyName>
     <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -59,14 +59,12 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="stage\" />
-    <Folder Include="stage\Tables\" />
-    <Folder Include="Security\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="stage\Tables\Pedidos.sql" />
-    <Build Include="stage\Tables\Remisiones.sql" />
-    <Build Include="stage\Tables\Ventas.sql" />
-    <Build Include="Security\stage.sql" />
+    <Build Include="dbo\Tables\Feeds.sql" />
+    <Build Include="dbo\Tables\OrdersItems.sql" />
+    <Build Include="dbo\Tables\Orders.sql" />
   </ItemGroup>
 </Project>

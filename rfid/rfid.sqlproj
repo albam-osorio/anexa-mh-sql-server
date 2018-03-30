@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>marroquinera</Name>
+    <Name>rfid</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{be10cfde-fa0b-41b2-91fc-d50b3fd203ea}</ProjectGuid>
+    <ProjectGuid>{71211e1c-00fd-4638-a61d-b1a606efa7bd}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>marroquinera</RootNamespace>
-    <AssemblyName>marroquinera</AssemblyName>
-    <ModelCollation>1033,CI</ModelCollation>
+    <RootNamespace>rfid</RootNamespace>
+    <AssemblyName>rfid</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -23,7 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -59,14 +59,31 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="esb\" />
+    <Folder Include="esb\Tables\" />
+    <Folder Include="msg\" />
+    <Folder Include="msg\Tables\" />
     <Folder Include="stage\" />
     <Folder Include="stage\Tables\" />
+    <Folder Include="esb\Views\" />
     <Folder Include="Security\" />
+    <Folder Include="esb\Sequences\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="stage\Tables\Pedidos.sql" />
+    <Build Include="esb\Tables\Remisiones.sql" />
+    <Build Include="esb\Tables\Ventas.sql" />
+    <Build Include="esb\Tables\VentasLineas.sql" />
+    <Build Include="msg\Tables\LogMensajes.sql" />
+    <Build Include="msg\Tables\Mensajes.sql" />
+    <Build Include="stage\Tables\Errores.sql" />
     <Build Include="stage\Tables\Remisiones.sql" />
     <Build Include="stage\Tables\Ventas.sql" />
+    <Build Include="esb\Tables\Integraciones.sql" />
+    <Build Include="esb\Views\Locaciones2.sql" />
+    <Build Include="esb\Views\Productos.sql" />
+    <Build Include="Security\esb.sql" />
+    <Build Include="Security\msg.sql" />
     <Build Include="Security\stage.sql" />
+    <Build Include="esb\Sequences\SequenceIntegraciones.sql" />
   </ItemGroup>
 </Project>
